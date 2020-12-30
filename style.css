@@ -104,3 +104,24 @@ body {
     text-align: center;
     text-transform: uppercase;
 }
+
+/*------------------------------*/
+
+@media screen and (max-width: 1024px){
+    
+    .btn{
+         width: 250px;
+         height: 40px;
+         margin:0; 
+         padding:0 
+        
+        
+      .boxbtn{
+          margin-top: 40px;
+          height: 10%;
+      }  
+}
+
+
+
+
