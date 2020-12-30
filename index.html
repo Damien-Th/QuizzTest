@@ -3,13 +3,61 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css" />
-    
         <title>PlayQuizz</title>
     </head>
 
     <body>
+        
+      <div id="accueil" class="accueil">
+        <div class="rules">
+          <h1>IT Quizz</h1>
+            <p>Sélectionner la bonne réponse <br>
+                15 Questions aléatoires </p>
+            <p>Ce jeux à été réaliser avec HTML, CSS et Javascritp.</p>
+          </div>
+          <div>
+        <button id="btnStart" class="btn">start</button>
+        </div>
+    </div>  
+        
+<div id="container" class="container">
+    
+    <div id="question" class="question">la Futur question</div>
+    
+    
+    <div id="reponse" class="repBox">
+        <button id="reponse1" class="btn">reponse 1</button>
+        <button id="reponse2" class="btn">reponse 2</button>
+        <button id="reponse3" class="btn">reponse 3</button>
+        <button id="reponse4" class="btn">reponse 4</button>
+    </div>
+   
+    
+    <div class="boxbtn">
+        <button id="btnNext" class="btn">next</button>
+    </div>
+        
+  
+        </div>
+        
+    
+        
+        <div id="fin" class="fin">
             
-           
-        <script src="Quest.js"></script>
-    </body>
+        <div class="felicitation">
+            <h1>Bravo</h1>
+            <p>Ton Score est de</p>
+            <div id="scoreFinal"></div>
+        </div>
+            
+          <div class='boxbtn'>
+        <button id="btnEnd" class="btnEnd">Home</button>
+        </div>
+            
+    </div>  
+        
+        
+        
+         <script src="Quest.js"></script>
+   </body>
 </html>
