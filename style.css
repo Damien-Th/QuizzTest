@@ -121,16 +121,23 @@ body {
           height: 10%;
           margin-top: 30px
       }  
-  
-  #btnStart {
+   
+    #btnStart {
         width: 40%;
     }
-  
-  .question{
+    
+    .question{
         height: 16%;
-        padding-top: 5px;
+        padding-top: 10px;
     }
-  
+    
+    .repBox{
+        margin-top: 100px;
+    }
+    
+    .container{
+        height: 75vh;
+    }
 }
 
 
