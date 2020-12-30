@@ -121,6 +121,11 @@ body {
           height: 10%;
           margin-top: 30px
       }  
+  
+  #btnStart {
+        width: 40%;
+    }
+  
 }
 
 
