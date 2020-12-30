@@ -135,8 +135,7 @@ body {
     }
     
     .container{
-        display: flex;
-        flex-direction: column;
+        display: block;
         height: 75vh;
     }
 }
