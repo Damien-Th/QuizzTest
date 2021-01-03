@@ -25,7 +25,13 @@ const eltReponse3 = document.getElementById('reponse3')
 const eltReponse4 = document.getElementById('reponse4')
 
 const eltBtnNext = document.getElementById('btnNext')
-eltBtnNext.addEventListener('click', setNextQuestion)
+eltBtnNext.addEventListener('click', setNextQuestion, hideNextBtn)
+
+const hidenext = eltBtnNext.classList.remove('hide')
+
+function hideNextBtn() {
+    hidenext;
+}
 
 let Quest = [];
 
@@ -172,6 +178,7 @@ function startGame() {
     score = 0
     boxAccueil.classList.add('hide')
     boxContainer.classList.remove('hide')
+    eltBtnNext.classList.add('hide')
     setNextQuestion() 
 }
 
@@ -180,6 +187,7 @@ function fresh() {
     eltReponse2.classList.remove('lose', 'win')
     eltReponse3.classList.remove('lose', 'win')
     eltReponse4.classList.remove('lose', 'win')
+    eltBtnNext.classList.add('hide')
 }
 
 
@@ -202,6 +210,8 @@ function questionEventHandler(element, answer) {
        }
     }    
         game = false
+        eltBtnNext.classList.remove('hide')
+        
 }
 
 
@@ -213,7 +223,7 @@ eltReponse4.addEventListener('click', (event) => questionEventHandler(event.targ
 
 function setNextQuestion() {
     fresh()
-
+    
     nb = Math.floor(Math.random() * 15);
 
     eltQuestion.innerHTML = Quest[nb].question
