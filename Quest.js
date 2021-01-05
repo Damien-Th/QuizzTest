@@ -1,7 +1,7 @@
 
 let game;
-var nb;
 let score;
+let question = []
 
 const boxAccueil = document.getElementById('accueil')
 const boxFin = document.getElementById('fin')
@@ -174,8 +174,26 @@ Quest[14] = {
 const eltBtn = document.querySelector('.btn')
 
 
+let arr = [];
+
+function shuffle(){
+
+do {
+  let num = Math.floor(Math.random() * 15);
+  arr.push(num);
+  arr = arr.filter((item, index) => {
+    return arr.indexOf(item) === index
+  });
+} while (arr.length < 15);
+    
+    }
+
+var nb;
+
+
 function startGame() {
     score = 0
+    shuffle()
     boxAccueil.classList.add('hide')
     boxContainer.classList.remove('hide')
     eltBtnNext.classList.add('hide')
@@ -197,21 +215,19 @@ function questionEventHandler(element, answer) {
    const won = answer === Quest[nb].correct
     element.classList.add(won ? 'win' : 'lose')
     
+    
     if(answer === Quest[nb].correct){
         score++;
-    if(score > 14){
-            boxFin.classList.remove('hide')
-            boxContainer.classList.add('hide')
-            eltScoreFinal.innerHTML = score
-            eltBtnEnd.addEventListener('click', function(){
-                boxFin.classList.add('hide')
-                boxAccueil.classList.remove('hide')
-            });
-       }
-    }    
+        endGame()
+        arr.shift();
+}else{
+    endGame()
+    arr.shift();
+}
+    
         game = false
         eltBtnNext.classList.remove('hide')
-        
+    
 }
 
 
@@ -224,8 +240,8 @@ eltReponse4.addEventListener('click', (event) => questionEventHandler(event.targ
 function setNextQuestion() {
     fresh()
     
-    nb = Math.floor(Math.random() * 15);
-
+    nb = arr[0];
+    
     eltQuestion.innerHTML = Quest[nb].question
     eltReponse1.innerHTML = Quest[nb].anwser1
     eltReponse2.innerHTML = Quest[nb].anwser2
@@ -233,4 +249,20 @@ function setNextQuestion() {
     eltReponse4.innerHTML = Quest[nb].anwser4
 
     game = true
+
+    
 }
+
+
+ function endGame(){
+     
+     if(arr.length === 1){
+            boxFin.classList.remove('hide')
+            boxContainer.classList.add('hide')
+            eltScoreFinal.innerHTML = score + "/15"
+           return eltBtnEnd.addEventListener('click', function(){
+                boxFin.classList.add('hide')
+                boxAccueil.classList.remove('hide')
+            });
+       }    
+ }
