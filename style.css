@@ -175,7 +175,10 @@ body {
         margin-top: 5px;
     }
 
-     .container {width: 60%;}
+     .container {
+        height: 88vh;
+        width: 60%;
+   }
 
 }
 
