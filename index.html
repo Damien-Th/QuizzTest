@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Questionnaire réalisé avec du HTML, CSS et Javascript. 15 Questions aléatoires">
+  <title>PlayQuizz</title>
+</head>
+
+<body>
+  <!---------Accueil------->
+  <div id="accueil" class="accueil">
+    <div class="rules">
+      <h1>IT Quizz</h1>
+      <p>Sélectionner la bonne réponse <br>
+        15 Questions aléatoires. <br>
+        Si la Bonne réponse est sélectionnée celle ci s'affichera en vert sinon en rouge.</p>
+      <p> <em>Ce jeu à été réalisé avec HTML, CSS et Javascritp.<br> Version 1.2</em></p>
+    </div>
+    <div>
+      <button id="btnStart" class="btn">start</button>
+    </div>
+  </div>
+  <!---------Game_Running------->
+  <div id="container" class="container">
+
+    <div id="question" class="question">la Futur question</div>
+
+    <div id="reponse" class="repBox">
+      <button id="reponse1" class="btn">reponse 1</button>
+      <button id="reponse2" class="btn">reponse 2</button>
+      <button id="reponse3" class="btn">reponse 3</button>
+      <button id="reponse4" class="btn">reponse 4</button>
+    </div>
+
+    <div class="boxbtn">
+      <button id="btnNext" class="btn">next</button>
+    </div>
+  </div>
+  <!---------Game_Ending------->
+  <div id="fin" class="fin">
+
+    <div class="felicitation">
+      <h1>Questionnaire Terminé</h1>
+      <p>Ton Score est de</p>
+      <div id="scoreFinal"></div>
+    </div>
+
+    <div class='boxbtn'>
+      <button id="btnEnd" class="btnEnd">Home</button>
+    </div>
+
+  </div>
+  <!---------Script------->
+  <script src="Quest.js"></script>
+</body>
+
+</html>
