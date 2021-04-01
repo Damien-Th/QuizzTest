@@ -198,15 +198,9 @@ function questionEventHandler(element, answer) {
     const won = answer === Quest[nb].correct
     element.classList.add(won ? 'win' : 'lose')
 
-    if (answer === Quest[nb].correct) {
-        score++;
-        endGame()
-        arr.shift();
-    } else {
-        endGame()
-        arr.shift();
-    }
+    if (answer === Quest[nb].correct) score++;
 
+    arr.shift();
     game = false
     eltBtnNext.classList.remove('hide')
 }
@@ -217,6 +211,9 @@ eltReponse3.addEventListener('click', (event) => questionEventHandler(event.targ
 eltReponse4.addEventListener('click', (event) => questionEventHandler(event.target, Quest[nb].anwser4));
 /*------Set_Next_Question----*/
 function setNextQuestion() {
+
+    if (arr.length === 0) return endGame();
+    
     fresh()
     nb = arr[0];
 
@@ -230,8 +227,6 @@ function setNextQuestion() {
 }
 /*--------Game_Ending------*/
 function endGame() {
-
-    if (arr.length === 1) {
         boxFin.classList.remove('hide')
         boxContainer.classList.add('hide')
         eltScoreFinal.innerHTML = score + "/15"
@@ -239,5 +234,4 @@ function endGame() {
             boxFin.classList.add('hide')
             boxAccueil.classList.remove('hide')
         });
-    }
 }
